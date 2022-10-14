@@ -1,0 +1,49 @@
+!/bin/bash
+
+echo "welcome to our dwe"
+
+echo "1 > Normal nmap "
+echo "2 > top ports"
+echo "3 > multiple ping"
+echo "4 > multiple ip scan "
+echo "5 > Scan IP range "
+echo "6 > service deduction "
+echo "7 > os dedection "
+
+read i
+echo "I"
+if ( (  [ $i == 1 ] ) ) then 
+        echo "enter the ip address :"
+        read ip
+        echo "jjjj"
+        nmap $ip
+elif ( ( [ $i == 2 ] ) ) then 
+        echo "Enter the ip address :"
+        read ip1
+        nmap  -Pn -top-ports 20 $ip1
+elif ( ( [ $i == 3 ] ) ) then 
+        echo "Enter the ip address"
+        read ip2
+elif ( ( [ $i == 4 ] ) ) then
+        echo "Enter the ip address range"
+        read ip3
+        nmap $ip3
+elif ( ( [ $i == 5 ] ) ) then 
+        echo "Enter the ip address"
+        read ip2
+elif ( ( [ $i == 6 ] ) ) then 
+        echo "Enter the ip address"
+        read ip5
+        nmap -sV $ip5
+elif ( ( [ $i == 6 ] ) ) then 
+        echo "Enter the ip address"
+        read ip6
+        nmap -O $ip6
+elif ( ( [ $i == 7 ] ) ) then 
+        echo "Enter the ip address"
+        read ip5
+        nmap -sV $ip5
+elif ( ( [ $i == 8 ] ) ) then 
+        echo "Enter the ip address"
+        read ip7
+        nmap -A $ip7
